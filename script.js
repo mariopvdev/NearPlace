@@ -3,6 +3,7 @@ let directionsService;
 let directionsRenderer = [];
 let destinationCount = 1; // Inicializamos con 1 dirección por defecto
 const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A6', '#FF8C00', '#8A2BE2', '#00CED1']; // Colores para las rutas
+const googleMapsApiKey = process.env.GOOGLE_MAPS_API_KEY;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -12,6 +13,11 @@ function initMap() {
 
   directionsService = new google.maps.DirectionsService();
 }
+
+// Aquí donde incluimos el API Key de Google Maps
+const script = document.createElement('script');
+script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=initMap`;
+document.head.appendChild(script);
 
 function addDestinationInput() {
   destinationCount++; // Incrementar el contador de campos agregados
