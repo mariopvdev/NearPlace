@@ -16,7 +16,7 @@ function initMap() {
 
 // Aquí donde incluimos el API Key de Google Maps dinámicamente
 const script = document.createElement('script');
-script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=initMap`; // Ahora usas la variable de entorno aquí
+script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=initMap`; //Ahora usas la variable de entorno aqui
 document.head.appendChild(script);
 
 function addDestinationInput() {
