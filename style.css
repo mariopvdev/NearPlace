@@ -1,0 +1,199 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 18px;
+  font-style: italic;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  flex: 1;
+  gap: 20px; /* Espacio entre las columnas */
+}
+
+.left-side {
+  width: 35%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right-side {
+  width: 60%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulario */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre los elementos del formulario */
+}
+
+.form-container label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-container input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.form-container button {
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #45a049;
+}
+
+/* Resultados */
+.results {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre los elementos de resultados */
+}
+
+.results h3 {
+  font-size: 20px;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+#routesTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#routesTable th, #routesTable td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+#routesTable th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+#routesTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#routesTable tr:hover {
+  background-color: #e2e2e2;
+}
+
+#nearestDestination {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+
+
+/* Mapa */
+#map {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  height: 400px; /* Altura fija para el mapa */
+}
+
+/* Boton agregar direccion*/
+button#addDestinationBtn {
+  background-color: #009688;
+}
+
+button#addDestinationBtn:hover {
+  background-color: #017e71;
+}
+
+
+/* Direcciones dinámicas */
+.destination-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.destination-input input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.remove-btn {
+  cursor: pointer;
+  color: red;
+  display: none;
+}
+
+.destination-input:hover .remove-btn {
+  display: inline-block;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: auto;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+footer strong {
+  color: #4CAF50;
+}
