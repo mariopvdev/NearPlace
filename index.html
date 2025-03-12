@@ -1,72 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NearPlace</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <h1>NearPlace</h1>
-    <p>Tu herramienta para encontrar el destino más cercano</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NearPlace</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>NearPlace</h1>
+      <p>Tu herramienta para encontrar el destino más cercano</p>
+    </header>
 
-  <!-- Contenido principal -->
-  <div class="container">
-    <div class="left-side">
-      <h2>¡Busca tu destino más cercano!</h2>
+    <!-- Contenido principal -->
+    <div class="container">
+      <div class="left-side">
+        <h2>¡Busca tu destino más cercano!</h2>
 
-      <div class="form-container">
-        <label for="origin">Dirección Principal:</label>
-        <input type="text" id="origin" placeholder="Ingresa tu dirección">
+        <div class="form-container">
+          <label for="origin">Dirección Principal:</label>
+          <input type="text" id="origin" placeholder="Ingresa tu dirección" />
 
-        <div id="destinations-container">
-          <div class="destination-input">
-            <label for="destination1">Dirección 1:</label>
-            <input type="text" id="destination1" placeholder="Ingresa la dirección 1">
-            <span class="remove-btn" onclick="removeDestination(1)">X</span>
+          <div id="destinations-container">
+            <div class="destination-input">
+              <label for="destination1">Dirección 1:</label>
+              <input
+                type="text"
+                id="destination1"
+                placeholder="Ingresa la dirección 1"
+              />
+              <span class="remove-btn" onclick="removeDestination(1)">X</span>
+            </div>
           </div>
+
+          <button id="addDestinationBtn">Agregar Dirección</button>
+          <button onclick="calculateRoutes()">Calcular Rutas</button>
         </div>
+      </div>
 
-        <button id="addDestinationBtn">Agregar Dirección</button>
-        <button onclick="calculateRoutes()">Calcular Rutas</button>
+      <div class="right-side">
+        <div id="map" style="height: 500px"></div>
+
+        <div class="results">
+          <h3>Resultados de rutas:</h3>
+          <table id="routesTable" border="1">
+            <thead>
+              <tr>
+                <th>Dirección</th>
+                <th>Tiempo de Viaje</th>
+              </tr>
+            </thead>
+            <tbody id="routesTableBody">
+              <!-- Aquí se agregarán las filas dinámicamente -->
+            </tbody>
+          </table>
+          <h3>Destino más cercano:</h3>
+          <p id="nearestDestination">Ninguno</p>
+        </div>
       </div>
     </div>
 
-    <div class="right-side">
-      <div id="map" style="height: 500px;"></div>
+    <!-- Footer -->
+    <footer>
+      <p>
+        Creado por <strong>Mario Prado</strong> | Todos los derechos reservados
+      </p>
+    </footer>
 
-      <div class="results">
-        <h3>Resultados de rutas:</h3>
-        <table id="routesTable" border="1">
-          <thead>
-            <tr>
-              <th>Dirección</th>
-              <th>Tiempo de Viaje</th>
-            </tr>
-          </thead>
-          <tbody id="routesTableBody">
-            <!-- Aquí se agregarán las filas dinámicamente -->
-          </tbody>
-        </table>
-        <h3>Destino más cercano:</h3>
-        <p id="nearestDestination">Ninguno</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>Creado por <strong>Mario Prado</strong> | Todos los derechos reservados</p>
-  </footer>
-  
-
-  <script src="config.js"></script>
-  <script src="script.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=" + googleMapsApiKey + "&callback=initMap" async defer></script>
-
-
-</body>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const script = document.createElement("script");
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=initMap`;
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+      });
+    </script>
+  </body>
 </html>
