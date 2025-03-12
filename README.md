@@ -74,7 +74,3 @@ NearPlace/
 ## Contributing
 
 Las contribuciones son bienvenidas. Para cambios importantes, por favor abre primero un issue para discutir lo que te gustaría cambiar.
-
-See `contributing.md` for ways to get started.
-
-Please adhere to this project's `code of conduct`.
